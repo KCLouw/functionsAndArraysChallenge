@@ -66,11 +66,11 @@ calculateTotal(tasksCompleted);
 
 let calculateAverage = arrayName => {
     let total = 0;
-    for(x in arrayName){
-        total += 1;
+    for(x of arrayName){
+        total += x;
     };
-
-    let average = arrayName.reduce((a, b) => a + b / arrayName.length);
+    console.log(total);
+    let average = total / arrayName.length;
     console.log(average);
 };
 
@@ -78,11 +78,15 @@ let calculateAverage = arrayName => {
 //Activity 7 - Call your calculate average function with tasksCompleted array as it's argument
 //Add your code below
 let myArray = [2,3,3,5,7,10];
-calculateAverage(myArray);
+calculateAverage(tasksCompleted);
 
 //Bonus Activity:
 //Rewrite activity 6 to calculate the average of the amount of tasksCompleted that is equal to true
 //Add your code below
+
+for(x of tasksCompleted){
+    
+}
 
 //Create a function that takes two array parameters, the second parameter being a rest parameter
 //Within your function block, specify a condition to prevent your function from having more than a 3 argument values
