@@ -1,7 +1,7 @@
 //Below you shall find a tasks array which we will use for the rest of this challenge
 //One line below this is the tasksCompleted array that we are going to use further use
 let tasks = ['swim', 'eat', 'study', 'read', 'sleep', 'awake', 'breakfast', 'party', 'relax', 'exercise',];
-let tasksCompleted  = [true, false, true, true, false];
+let tasksCompleted = [true, false, true, true, false];
 
 //Activity 1 - Edit the tasksCompleted array by programmatically doing the following:
 /*  1) Remove the first completed task
@@ -21,13 +21,13 @@ console.log(tasksCompleted);
 //Activity 2 - Complete this function. 
 //Create a for loop that can loop through an array and print out all the array items in the console.
 //This function takes a parameter of arrayName.
-    function displayArray(arrayName){
+function displayArray(arrayName) {
     //Add your code below
-        for(x of arrayName){
-            console.log(x);
-        };
+    for (x of arrayName) {
+        console.log(x);
     };
-    
+};
+
 //Activity 3 - Print the tasks array to the console by using the function you created in Activity 2
 //Add your code below
 
@@ -40,16 +40,16 @@ displayArray(tasks);
 //Create a variable inside this function called total and set it equal to 0.
 //Create a for loop that calculates the sum of all the values in an array store the answer in the total variable.
 //Outside the for loop, console log the total.
-    function calculateTotal(arrayName){
+function calculateTotal(arrayName) {
     //Add your code below
-        let total = 0;
-        for(x in arrayName){
-            total += 1;
-        };
-        console.log(total);
+    let total = 0;
+    for (x in arrayName) {
+        total += 1;
     };
+    console.log(total);
+};
 
-    calculateTotal(tasks);
+calculateTotal(tasks);
 
 //Activity 5 - Call the calculateTotal function and pass tasksCompleted as an argument.
 //Add your code below
@@ -66,8 +66,10 @@ calculateTotal(tasksCompleted);
 
 let calculateAverage = arrayName => {
     let total = 0;
-    for(x of arrayName){
-        total += x;
+    for (x in arrayName) {
+        x++;
+        total += parseInt(x);
+        console.log(x);
     };
     console.log(total);
     let average = total / arrayName.length;
@@ -77,16 +79,25 @@ let calculateAverage = arrayName => {
 
 //Activity 7 - Call your calculate average function with tasksCompleted array as it's argument
 //Add your code below
-let myArray = [2,3,3,5,7,10];
+let myArray = [2, 3, 3, 5, 7, 10];
 calculateAverage(tasksCompleted);
 
 //Bonus Activity:
 //Rewrite activity 6 to calculate the average of the amount of tasksCompleted that is equal to true
 //Add your code below
 
-for(x of tasksCompleted){
-    
-}
+let calculateAverageTrue = arrayName => {
+    let total = 0;
+    for (x of arrayName) {
+        total += x;
+        console.log(x);
+    };
+    console.log(total);
+    let average = total / arrayName.length;
+    console.log(average);
+};
+
+calculateAverageTrue(tasksCompleted);
 
 //Create a function that takes two array parameters, the second parameter being a rest parameter
 //Within your function block, specify a condition to prevent your function from having more than a 3 argument values
@@ -94,3 +105,28 @@ for(x of tasksCompleted){
 //Console.log your argument length an your function
 //Refer to the Arguments method taught in the 3rd lesson
 //Add your code below
+
+function myFunc(a, ...b) {
+    if (arguments.length < 4) {
+        let arr = "";
+        for (x of a) {
+            arr += x + " ";
+        };
+        let arrB = "";
+        for (x of b) {
+            arrB += x + " ";
+        };
+        console.log(arr);
+        console.log(arrB);
+    } else {
+        console.log("Please enter no more than 3 values");
+    };
+    console.log(arguments.length);
+
+};
+
+let arrOne = [5, 10, 51, 154];
+let arrTwo = [5, 10, 51, 154, 54, 87, 98];
+let arrThree = [5, 10, 51, 154, 54, 87, 98, 89, 56, 23, 45];
+let arrFour = ["sd", "sd"]
+myFunc(tasks, tasksCompleted, arrFour, arrOne);
